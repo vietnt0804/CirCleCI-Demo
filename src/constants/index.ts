@@ -1,0 +1,21 @@
+export const ACCESS_TOKEN = 'token';
+
+export const STATUS_CODE = {
+    HTTP_SUCCESS: 200,
+    HTTP_UNAUTHORIZED: 401,
+    HTTP_FORBIDDEN: 403,
+    HTTP_BAD_REQUEST: 400,
+    HTTP_UNPROCESSABLE_ENTITY: 422,
+    HTTP_NOT_FOUND: 404,
+    HTTP_NOT_ACCEPTABLE: 406,
+    HTTP_INTERNAL_SERVER_ERROR: 500,
+};
+
+export const RouteURL = {
+    AUTH: {
+        LOGIN: '/auth/login'
+    },
+    HOME: {
+        INDEX: '/'
+    }
+}
