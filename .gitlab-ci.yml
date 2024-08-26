@@ -1,0 +1,43 @@
+stages:
+  - lint
+  - build
+  - deploy
+
+cache:
+  paths:
+    - node_modules/
+
+lint:
+  image: node:20.10.0
+  tags:
+    - runner-initiative-room
+  stage: lint
+  script:
+    - npm install
+    - npm run lint
+  only:
+    - merge_requests
+
+buid-dev:
+  image: node:20.10.0
+  tags:
+    - runner-initiative-room
+  stage: build
+  script:
+    - npm install
+    - npm run lint
+    - npm run build -- --mode development
+  artifacts:
+    expire_in: 1 hour
+    paths:
+      - dist
+  only:
+    - develop
+
+deploy-dev:
+  image: alpine
+  stage: deploy
+  script:
+    - echo "deploying to dev"
+  only:
+    - develop
