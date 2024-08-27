@@ -4,13 +4,10 @@ version: '3.8'
 services:
   app:
     build:
-      context: .
-      dockerfile: Dockerfile_dev
+      context: ../
+      dockerfile: docker/Dockerfile_dev
     ports:
       - "3000:3000"  # Điều chỉnh cổng nếu cần
     environment:
       NODE_ENV: development
-    volumes:
-      - .:/app
-      - /app/node_modules
     command: npm run dev

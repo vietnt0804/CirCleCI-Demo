@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Build ứng dụng nếu cần thiết (ví dụ với ứng dụng React hoặc Vue)
-# RUN npm run build
+RUN npm run build
 
 # Expose cổng mà ứng dụng sẽ chạy (thường là 3000 hoặc 4000 tùy ứng dụng Node.js)
 EXPOSE 8081
