@@ -1,13 +1,15 @@
-# docker-compose up --build
+# docker-compose up --build | docker-compose -f docker/docker-compose.yml up --build
 version: '3.8'
 
 services:
   app:
+    container_name: base-app
     build:
       context: ../
       dockerfile: docker/Dockerfile_dev
     ports:
-      - "3000:3000"  # Điều chỉnh cổng nếu cần
+      - "3000:80"  # Điều chỉnh cổng nếu cần
     environment:
       NODE_ENV: development
-    command: npm run dev
+    # command: npm run dev
+    restart: always
