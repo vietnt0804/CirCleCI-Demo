@@ -2,7 +2,7 @@
 
 import { authSchema, type AuthSchema } from '@/utils/rules';
 import { useForm } from 'vee-validate';
-import { onMounted, onUnmounted, ref } from 'vue';
+import { ref } from 'vue';
 import { RouteURL } from '@/constants';
 
 export type FormData = Pick<AuthSchema, 'email' | 'password'>;
