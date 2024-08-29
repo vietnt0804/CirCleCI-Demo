@@ -12,12 +12,15 @@ export const STATUS_CODE = {
 }
 
 export const RouteURL = {
-  AUTH: {
-    LOGIN: '/auth/login'
-  },
-  HOME: {
-    INDEX: '/'
-  }
+  HOME: '/',
+  DASHBOARD: '/dashboard',
+  RISK_PROFILE: '/risk-profile',
+  FINANCES: '/finances',
+  ASSET_STRUCTURE: '/asset-structure',
+  CASH_FLOW: '/cash-flow',
+  NET_WORTH: '/net-worth',
+  FINANCIAL_PLAN: '/financial-plan',
+  EXPERT_ADVICE: '/expert-advice'
 }
 
 interface MenuItem {
@@ -28,12 +31,12 @@ interface MenuItem {
 }
 
 export const menuItems: MenuItem[] = [
-  { id: 'home', label: 'Trang chủ', icon: 'fas fa-home', to: '/dashboard' },
-  { id: 'risk-profile', label: 'Hồ sơ rủi ro', icon: 'fas fa-user-shield', to: '/' },
-  { id: 'finances', label: 'Tài chính của bạn', icon: 'fas fa-wallet', to: '/' },
-  { id: 'asset-structure', label: 'Cơ cấu tài sản', icon: 'fas fa-chart-pie', to: '/' },
-  { id: 'cash-flow', label: 'Dòng tiền năm', icon: 'fas fa-money-bill-wave', to: '/' },
-  { id: 'net-worth', label: 'Tài sản ròng', icon: 'fas fa-balance-scale', to: '/' },
-  { id: 'financial-plan', label: 'Kế hoạch tài chính', icon: 'fas fa-tasks', to: '/' },
-  { id: 'expert-advice', label: 'Khuyến nghị từ chuyên gia', icon: 'fas fa-user-tie', to: '/' }
+  { id: 'home', label: 'Trang chủ', icon: 'fas fa-home', to: RouteURL.HOME },
+  { id: 'risk-profile', label: 'Hồ sơ rủi ro', icon: 'fas fa-user-shield', to: RouteURL.RISK_PROFILE },
+  { id: 'finances', label: 'Tài chính của bạn', icon: 'fas fa-wallet', to: RouteURL.FINANCES },
+  { id: 'asset-structure', label: 'Cơ cấu tài sản', icon: 'fas fa-chart-pie', to: RouteURL.ASSET_STRUCTURE },
+  { id: 'cash-flow', label: 'Dòng tiền năm', icon: 'fas fa-money-bill-wave', to: RouteURL.CASH_FLOW },
+  { id: 'net-worth', label: 'Tài sản ròng', icon: 'fas fa-balance-scale', to: RouteURL.NET_WORTH },
+  { id: 'financial-plan', label: 'Kế hoạch tài chính', icon: 'fas fa-tasks', to: RouteURL.FINANCIAL_PLAN },
+  { id: 'expert-advice', label: 'Khuyến nghị từ chuyên gia', icon: 'fas fa-user-tie', to: RouteURL.EXPERT_ADVICE }
 ]
