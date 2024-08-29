@@ -5,6 +5,7 @@ import Footer from './components/Footer.vue';
 import Dashboard from './components/Dashboard.vue';
 
 import { ref } from 'vue'
+import { RouterView } from 'vue-router';
 
 const currentPageTitle = ref('Trang chủ');
 
@@ -16,7 +17,7 @@ const currentPageTitle = ref('Trang chủ');
     <div class="main-content">
       <Sidebar />
       <main class="content">
-        <Dashboard></Dashboard>
+         <RouterView />
       </main>
     </div>
     <Footer />

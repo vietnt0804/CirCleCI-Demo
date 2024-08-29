@@ -10,10 +10,10 @@
     <nav>
       <ul>
         <li v-for="item in menuItems" :key="item.id" :class="{ active: item.id === activeItem }">
-          <a href="#" @click="setActiveItem(item.id)">
+          <RouterLink :to="item.to" @click="setActiveItem(item.id)">
             <i :class="item.icon"></i>
             <span>{{ item.label }}</span>
-          </a>
+          </RouterLink>
         </li>
       </ul>
     </nav>
@@ -22,34 +22,18 @@
     </button>
   </aside>
 </template>
-  
+
 <script setup lang="ts">
+import { ref } from 'vue'
 
-  import { ref } from 'vue';
-  
-  interface MenuItem {
-    id: string;
-    label: string;
-    icon: string;
-  }
+import { menuItems } from '@/constants';
 
-  const menuItems: MenuItem[] = [
-    { id: 'home', label: 'Trang chủ', icon: 'fas fa-home' },
-    { id: 'risk-profile', label: 'Hồ sơ rủi ro', icon: 'fas fa-user-shield' },
-    { id: 'finances', label: 'Tài chính của bạn', icon: 'fas fa-wallet' },
-    { id: 'asset-structure', label: 'Cơ cấu tài sản', icon: 'fas fa-chart-pie' },
-    { id: 'cash-flow', label: 'Dòng tiền năm', icon: 'fas fa-money-bill-wave' },
-    { id: 'net-worth', label: 'Tài sản ròng', icon: 'fas fa-balance-scale' },
-    { id: 'financial-plan', label: 'Kế hoạch tài chính', icon: 'fas fa-tasks' },
-    { id: 'expert-advice', label: 'Khuyến nghị từ chuyên gia', icon: 'fas fa-user-tie' },
-    ];
-
-  const activeItem = ref('home');
-  const setActiveItem = (id: string) => {
-    activeItem.value = id;
-  };
+const activeItem = ref('home')
+const setActiveItem = (id: string) => {
+  activeItem.value = id
+}
 </script>
-  
+
 <style scoped>
 .sidebar {
   width: 250px;
@@ -102,7 +86,8 @@ li a {
   transition: background-color 0.3s ease;
 }
 
-li a:hover, li.active a {
+li a:hover,
+li.active a {
   background-color: #e9ecef;
 }
 
